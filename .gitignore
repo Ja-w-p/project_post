@@ -1,0 +1,6 @@
+#root
+.DS_Store
+
+#server/
+server/node_modules
+server/.env
