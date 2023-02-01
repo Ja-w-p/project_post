@@ -13,12 +13,12 @@ const NavComponent = (props) => {
   return (
     <div>
       <nav>
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
             <ul className="navbar-nav">
               <li className="nav-item me-5">
                 <Link
-                  className="nav-link active fs-1 fw-bolder border border-5 border-light rounded-pill bg-light"
+                  className="nav-link active fs-1 fw-bolder bg-light"
                   to="/"
                 >
                   Home
@@ -27,10 +27,7 @@ const NavComponent = (props) => {
               {currentUser && (
                 <div className="pt-3">
                   <li className="nav-item">
-                    <Link
-                      className="nav-link fs-3 link-dark fw-bold"
-                      to="/game"
-                    >
+                    <Link className="nav-link fs-3 fw-bold" to="/game">
                       遊戲
                     </Link>
                   </li>
@@ -39,10 +36,7 @@ const NavComponent = (props) => {
               {currentUser && (
                 <div className="pt-3">
                   <li className="nav-item">
-                    <Link
-                      className="nav-link fs-3 link-dark fw-bold"
-                      to="/holo"
-                    >
+                    <Link className="nav-link fs-3 fw-bold" to="/holo">
                       HOLOLIVE
                     </Link>
                   </li>
@@ -52,10 +46,7 @@ const NavComponent = (props) => {
               {currentUser && (
                 <div className="pt-3">
                   <li className="nav-item">
-                    <Link
-                      className="nav-link fs-3 link-dark fw-bold"
-                      to="/food"
-                    >
+                    <Link className="nav-link fs-3 fw-bold" to="/food">
                       美食
                     </Link>
                   </li>
