@@ -25,7 +25,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors()); //一定要放在route上面
-app.use("/api/user", authRoute); //"/api"<-之後跟前端(react)整合時，有加這個會比較方便
+app.use("/api/user", authRoute);
 app.use(
   "/api/board",
   passport.authenticate("jwt", {
@@ -33,9 +33,6 @@ app.use(
   }),
   postRoute
 );
-
-//第一個"/api/user"不用驗證是因為任何人都能來註冊/登入使用
-//第二個就限制使用者才能看
 
 app.get("/", (req, res) => {
   res.send("port8080");

@@ -12,10 +12,8 @@ router.use((req, res, next) => {
   next();
 });
 
-//如果有要新增討論版就放進去
 let category = ["game", "food", "holo"];
 
-//get各討論版的文章
 category.forEach((Element) => {
   router.get("/" + Element, (req, res) => {
     Post.find({ category: Element })
@@ -28,7 +26,6 @@ category.forEach((Element) => {
   });
 });
 
-//user profile
 router.get("/profile/:ID", (req, res) => {
   let { ID } = req.params;
   Post.find({ auther: ID })
@@ -40,7 +37,6 @@ router.get("/profile/:ID", (req, res) => {
     });
 });
 
-//文章_id
 router.get("/essay/:_id", (req, res) => {
   let { _id } = req.params;
   Post.findById({ _id })

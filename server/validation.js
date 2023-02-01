@@ -1,7 +1,5 @@
 const Joi = require("joi");
 
-//註冊/登入時的資料格式驗證
-
 const registerValidation = (data) => {
   const schema = Joi.object({
     firstName: Joi.string().required(),
