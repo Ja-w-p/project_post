@@ -131,6 +131,19 @@ class BoardService {
       },
     });
   }
+  deleteAccount(_id) {
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else {
+      token = "";
+    }
+    return axios.delete(API_URL + "/account/" + _id, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
 }
 
 export default new BoardService();

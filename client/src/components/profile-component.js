@@ -18,6 +18,9 @@ const ProfileComponent = (props) => {
     sessionStorage.setItem("_id", _id);
     navigate("/essay");
   };
+  const handleToSetting = () => {
+    navigate("/setting");
+  };
 
   useEffect(() => {
     console.log("Using Effect.");
@@ -68,11 +71,14 @@ const ProfileComponent = (props) => {
               </div>
             </div>
             <div className="mt-5">
-              <button className="btn btn-outline-secondary">
+              <button
+                className="btn btn-outline-secondary"
+                onClick={handleToSetting}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="25"
+                  height="25"
                   fill="currentColor"
                   className="bi bi-gear"
                   viewBox="0 0 16 16"
