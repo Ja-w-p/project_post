@@ -51,7 +51,7 @@ const BoardComponent = (props) => {
       {currentUser && postData && postData.length !== 0 && (
         <div className="container">
           <div className="mt-5 mx-5 px-5 pt-3">
-            <div className="">
+            <div>
               <form className="d-flex justify-content-center flex-row mx-5 pb-3">
                 <input
                   className="w-50 form-control mx-3"

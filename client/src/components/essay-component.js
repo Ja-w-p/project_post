@@ -70,7 +70,7 @@ function EssayComponent(props) {
     <div>
       {!currentUser && (
         <div className="m-5 p-5 text-center">
-          <p className="fs-1  pb-3">＜請先登入＞</p>
+          <p className="fs-1 pb-3">＜請先登入＞</p>
           <button className="btn btn-outline-dark" onClick={handleToLogin}>
             前往登入頁
           </button>
