@@ -148,10 +148,10 @@ router.delete("/essay/:_id", async (req, res) => {
       .then(() => {
         res.send("Post deleted.");
       })
-      .catch((err) => {
+      .catch((error) => {
         res.send({
           success: false,
-          message: err,
+          message: error,
         });
       });
   } else {
@@ -268,6 +268,30 @@ router.get("/mostpopular", (req, res) => {
     .catch((error) => {
       res.send(error);
     });
+});
+
+router.delete("/account/:_id", (req, res) => {
+  let _id = req.params;
+  let user_id = req.user._id.toString();
+  let theUser = User.findById({ _id });
+  if (!theUser) {
+    res.status(400);
+    return res.json({
+      success: false,
+      message: "User not found",
+    });
+  }
+  if (_id._id === user_id || req.user.isAdmin())
+    User.deleteOne({ _id })
+      .then(() => {
+        res.send("User deleted");
+      })
+      .catch((error) => {
+        res.send({
+          success: false,
+          message: error,
+        });
+      });
 });
 
 module.exports = router;
