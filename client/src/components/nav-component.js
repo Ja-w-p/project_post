@@ -79,12 +79,8 @@ const NavComponent = (props) => {
               {currentUser && (
                 <div>
                   <li className="nav-item">
-                    <Link
-                      onClick={handleLogout}
-                      className="nav-link fs-5"
-                      to="/"
-                    >
-                      登出
+                    <Link className="nav-link fs-5" to="/profile">
+                      個人紀錄
                     </Link>
                   </li>
                 </div>
@@ -93,8 +89,12 @@ const NavComponent = (props) => {
               {currentUser && (
                 <div>
                   <li className="nav-item">
-                    <Link className="nav-link fs-5" to="/profile">
-                      個人紀錄
+                    <Link
+                      onClick={handleLogout}
+                      className="nav-link fs-5"
+                      to="/"
+                    >
+                      登出
                     </Link>
                   </li>
                 </div>
