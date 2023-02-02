@@ -294,4 +294,38 @@ router.delete("/account/:_id", (req, res) => {
       });
 });
 
+router.patch("/account/:_id", (req, res) => {
+  let _id = req.params;
+  let user_id = req.user._id.toString();
+  let theUser = User.findById({ _id });
+  if (!theUser) {
+    res.status(400);
+    return res.json({
+      success: false,
+      message: "User not found",
+    });
+  }
+  if (_id._id === user_id) {
+    User.findOneAndUpdate({ _id }, req.body, {
+      new: true,
+      runValidators: true,
+    })
+      .then(() => {
+        res.send("data updated");
+      })
+      .catch((error) => {
+        res.send({
+          success: false,
+          message: error,
+        });
+      });
+  } else {
+    res.status(403);
+    return res.json({
+      success: false,
+      message: "Unauthorized",
+    });
+  }
+});
+
 module.exports = router;
