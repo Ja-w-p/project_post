@@ -60,7 +60,12 @@ function App() {
         />
         <Route
           path="setting"
-          element={<SettingComponent currentUser={currentUser} />}
+          element={
+            <SettingComponent
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          }
         />
       </Routes>
     </div>

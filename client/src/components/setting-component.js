@@ -4,7 +4,7 @@ import boardService from "../services/board.service";
 import AuthServe from "../services/auth.service";
 
 function SettingComponent(props) {
-  let { currentUser } = props;
+  let { currentUser, setCurrentUser } = props;
   let navigate = useNavigate();
   let [flag, setFlag] = useState(0);
   let [newEmail, setNewEmail] = useState("");
@@ -24,8 +24,9 @@ function SettingComponent(props) {
     boardService
       .patchEmail(currentUser.user._id, newEmail)
       .then(() => {
-        window.alert("聯絡信箱已更新，請重新登入");
         AuthServe.logout();
+        window.alert("聯絡信箱已更新，請重新登入");
+        setCurrentUser(null);
         navigate("/login");
       })
       .catch((error) => {
@@ -42,6 +43,7 @@ function SettingComponent(props) {
         .then(() => {
           AuthServe.logout();
           window.alert("我們會想念你的。");
+          setCurrentUser(null);
           navigate("/register");
         })
         .catch((error) => {
