@@ -144,18 +144,22 @@ class BoardService {
       },
     });
   }
-  patchAccount(_id) {
+  patchEmail(_id, email) {
     let token;
     if (localStorage.getItem("user")) {
       token = JSON.parse(localStorage.getItem("user")).token;
     } else {
       token = "";
     }
-    return axios.patch(API_URL + "/account/" + _id, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    return axios.patch(
+      API_URL + "/email/" + _id,
+      { email },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
   }
 }
 

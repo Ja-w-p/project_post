@@ -29,7 +29,7 @@ const HomeComponent = (props) => {
     <main>
       <div className="container pb-4">
         <div className="p-5 bg-light mt-5 mx-5">
-          <div className="p-4 ">
+          <div className="p-4">
             {!currentUser && (
               <div>
                 <p className="fs-3">

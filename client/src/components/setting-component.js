@@ -1,49 +1,157 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import boardService from "../services/board.service";
+import AuthServe from "../services/auth.service";
 
 function SettingComponent(props) {
   let { currentUser } = props;
+  let navigate = useNavigate();
+  let [flag, setFlag] = useState(0);
+  let [newEmail, setNewEmail] = useState("");
+  let [msg, setMsg] = useState("");
+  const handleToLogin = () => {
+    navigate("/login");
+  };
+
+  const handleChangeNewEmail = (e) => {
+    setNewEmail(e.target.value);
+  };
+
+  const HandleChangeDeleteMsg = (e) => {
+    setMsg(e.target.value);
+  };
+  const handleToEditEmail = () => {
+    boardService
+      .patchEmail(currentUser.user._id, newEmail)
+      .then(() => {
+        window.alert("聯絡信箱已更新，請重新登入");
+        AuthServe.logout();
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleToDeleteAccount = () => {
+    if (msg !== "我想刪除帳號") {
+      window.alert("訊息錯誤");
+    } else {
+      boardService
+        .deleteAccount(currentUser.user._id)
+        .then(() => {
+          AuthServe.logout();
+          window.alert("我們會想念你的。");
+          navigate("/register");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+
   return (
-    <div className="container">
-      <div className="text-center">
-        <p className="fs-2 mt-2">個人資料</p>
-      </div>
-      <div className="m-5">
-        <div className="m-5">
-          <p>
-            姓名：{currentUser.user.firstName} {currentUser.user.lastName}
-          </p>
-          <p>聯絡信箱：{currentUser.user.email}</p>
+    <div>
+      {!currentUser && (
+        <div className="m-5 p-5 text-center">
+          <p className="fs-1 pb-3">＜請先登入＞</p>
+          <button className="btn btn-outline-dark" onClick={handleToLogin}>
+            前往登入頁
+          </button>
         </div>
-        <div className="text-end">
-          <div className="btn-group" role="group">
-            <button
-              type="button"
-              className="btn btn-outline-dark dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                fill="currentColor"
-                className="bi bi-pencil"
-                viewBox="0 0 16 16"
-              >
-                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-              </svg>
-            </button>
-            <ul className="dropdown-menu">
-              <li>
-                <button className="dropdown-item">更改信箱</button>
-              </li>
-              <li>
-                <button className="dropdown-item">刪除帳號</button>
-              </li>
-            </ul>
+      )}
+      {currentUser && (
+        <div className="container">
+          <div className="text-center">
+            <p className="fs-2 mt-2">個人資料</p>
+          </div>
+          <div className="m-5">
+            <div className="m-5">
+              <p>
+                姓名：{currentUser.user.firstName} {currentUser.user.lastName}
+              </p>
+              <p>聯絡信箱：{currentUser.user.email}</p>
+            </div>
+
+            <div className="text-end">
+              <div className="btn-group" role="group">
+                <button
+                  type="button"
+                  className="btn btn-outline-dark dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    className="bi bi-pencil"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                  </svg>
+                </button>
+                <ul className="dropdown-menu">
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => {
+                        setFlag(1);
+                      }}
+                    >
+                      更改信箱
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => {
+                        setFlag(2);
+                      }}
+                    >
+                      刪除帳號
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {flag === 1 && (
+              <div className="bg-light p-2 m-5">
+                <div className="text-center mt-5">
+                  <label>新聯絡信箱：</label>
+                  <input type="text" onChange={handleChangeNewEmail} />
+                  <div className="mt-3">
+                    <button
+                      onClick={handleToEditEmail}
+                      className="btn btn-outline-success"
+                    >
+                      確認
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            {flag === 2 && (
+              <div className="bg-light p-2 m-5">
+                <div className="text-center mt-5">
+                  <p>如果確定要刪除帳號，請輸入以下文字：</p>
+                  <p className="">我想刪除帳號</p>
+                  <input type="text" onChange={HandleChangeDeleteMsg} />
+                  <div className="mt-3">
+                    <button
+                      onClick={handleToDeleteAccount}
+                      className="btn btn-outline-danger"
+                    >
+                      確認
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

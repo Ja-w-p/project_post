@@ -294,9 +294,11 @@ router.delete("/account/:_id", (req, res) => {
       });
 });
 
-router.patch("/account/:_id", (req, res) => {
+router.patch("/email/:_id", (req, res) => {
   let _id = req.params;
+  console.log(_id);
   let user_id = req.user._id.toString();
+  console.log(user_id);
   let theUser = User.findById({ _id });
   if (!theUser) {
     res.status(400);
@@ -305,6 +307,7 @@ router.patch("/account/:_id", (req, res) => {
       message: "User not found",
     });
   }
+  console.log(req.body);
   if (_id._id === user_id) {
     User.findOneAndUpdate({ _id }, req.body, {
       new: true,
@@ -320,7 +323,7 @@ router.patch("/account/:_id", (req, res) => {
         });
       });
   } else {
-    res.status(403);
+    res.status(401);
     return res.json({
       success: false,
       message: "Unauthorized",
