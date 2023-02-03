@@ -25,7 +25,7 @@ function SettingComponent(props) {
       .patchEmail(currentUser.user._id, newEmail)
       .then(() => {
         AuthServe.logout();
-        window.alert("聯絡信箱已更新，請重新登入");
+        window.alert("Email已更新，請重新登入");
         setCurrentUser(null);
         navigate("/login");
       })
