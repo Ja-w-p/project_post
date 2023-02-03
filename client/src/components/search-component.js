@@ -33,8 +33,16 @@ function SearchComponent(props) {
     <div>
       {currentUser && (
         <div className="container">
+          <div className="text-center mt-5">
+            <button
+              className="btn btn-outline-dark mt-3"
+              onClick={handleToBoard}
+            >
+              返回版面
+            </button>
+          </div>
           {searchData.length !== 0 && (
-            <div className="mt-5 mx-5 px-5 pt-5">
+            <div className="mx-5 px-5 pt-5">
               {searchData.map((post) => (
                 <div
                   key={post._id}
@@ -60,14 +68,6 @@ function SearchComponent(props) {
                   </p>
                 </div>
               ))}
-              <div className="text-center">
-                <button
-                  className="btn btn-outline-dark mt-3"
-                  onClick={handleToBoard}
-                >
-                  返回版面
-                </button>
-              </div>
             </div>
           )}
           {searchData.length === 0 && (
