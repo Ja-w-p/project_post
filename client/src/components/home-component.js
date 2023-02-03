@@ -28,11 +28,11 @@ const HomeComponent = (props) => {
   return (
     <main>
       <div className="container pb-4">
-        <div className="p-5 bg-light mt-5 mx-5">
+        <div className="p-5 bg-dark mt-5 mx-5 rounded-start-pill">
           <div className="p-4">
             {!currentUser && (
               <div>
-                <p className="fs-3">
+                <p className="fs-3 text-white">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
                   minima tenetur odio tempore fuga at voluptas natus inventore
                   odit! Incidunt temporibus qui sapiente molestias, nihil modi
@@ -45,7 +45,7 @@ const HomeComponent = (props) => {
             )}
             {currentUser && popularPost && popularPost.length !== 0 && (
               <div className="row">
-                <p className="fs-3 text-center">熱門文章</p>
+                <p className="fs-3 text-center text-white">熱門文章</p>
                 {popularPost.map((post) => (
                   <div
                     key={post._id}

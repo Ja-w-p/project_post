@@ -82,7 +82,7 @@ const BoardComponent = (props) => {
               {postData.map((post) => (
                 <div
                   key={post._id}
-                  className="row border border-light bg-dark-subtle mx-5 mb-2 pt-3 rounded-top"
+                  className="row border border-light bg-dark-subtle mx-5 pt-3 rounded-top"
                 >
                   <p className="col-md-1">{post.reply.length}</p>
                   <h5 className="col-md-4">
