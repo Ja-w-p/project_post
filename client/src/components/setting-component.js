@@ -119,34 +119,48 @@ function SettingComponent(props) {
               </div>
             </div>
             {flag === 1 && (
-              <div className="bg-light p-2 m-5">
-                <div className="text-center mt-5">
-                  <label>新聯絡信箱：</label>
-                  <input type="text" onChange={handleChangeNewEmail} />
-                  <div className="mt-3">
-                    <button
-                      onClick={handleToEditEmail}
-                      className="btn btn-outline-success"
-                    >
-                      確認
-                    </button>
+              <div className="mx-5">
+                <div className="bg-light py-4 m-5">
+                  <div className="text-center mt-3">
+                    <label>新聯絡信箱：</label>
+                    <input
+                      type="text"
+                      onChange={handleChangeNewEmail}
+                      className="border border-success-subtle"
+                    />
+                    <div className="mt-3">
+                      <button
+                        onClick={handleToEditEmail}
+                        className="btn btn-outline-success"
+                      >
+                        確認
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             )}
             {flag === 2 && (
-              <div className="bg-light p-2 m-5">
-                <div className="text-center mt-5">
-                  <p>如果確定要刪除帳號，請輸入以下文字：</p>
-                  <p className="">我想刪除帳號</p>
-                  <input type="text" onChange={HandleChangeDeleteMsg} />
-                  <div className="mt-3">
-                    <button
-                      onClick={handleToDeleteAccount}
-                      className="btn btn-outline-danger"
-                    >
-                      確認
-                    </button>
+              <div className="mx-5">
+                <div className="bg-light p-2 m-5">
+                  <div className="text-center mt-2">
+                    <p className="fw-bold">
+                      如果確定要刪除帳號，請輸入以下文字：
+                    </p>
+                    <p className="text-danger">我想刪除帳號</p>
+                    <input
+                      type="text"
+                      onChange={HandleChangeDeleteMsg}
+                      className="border border-danger-subtle"
+                    />
+                    <div className="mt-3">
+                      <button
+                        onClick={handleToDeleteAccount}
+                        className="btn btn-outline-danger"
+                      >
+                        確認
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

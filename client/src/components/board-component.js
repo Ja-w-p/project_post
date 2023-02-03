@@ -50,7 +50,7 @@ const BoardComponent = (props) => {
       )}
       {currentUser && postData && postData.length !== 0 && (
         <div className="container">
-          <div className="mt-5 mx-5 px-5 pt-3">
+          <div className="mt-3 mx-5 px-5 pt-3">
             <div>
               <form className="d-flex justify-content-center flex-row mx-5 pb-3">
                 <input
@@ -82,16 +82,16 @@ const BoardComponent = (props) => {
               {postData.map((post) => (
                 <div
                   key={post._id}
-                  className="row border border-muted border-3 mx-5 mb-2 pt-3 rounded-pill"
+                  className="row border border-light bg-dark-subtle mx-5 mb-2 pt-3 rounded-top"
                 >
-                  <p className="col-md-1 fw-bold">{post.reply.length}</p>
+                  <p className="col-md-1">{post.reply.length}</p>
                   <h5 className="col-md-4">
                     <a
                       href="# "
                       onClick={() => {
                         handleSetEssay(post._id);
                       }}
-                      className="link-dark"
+                      className="link-dark text-decoration-none"
                     >
                       {post.title}
                     </a>
