@@ -36,13 +36,13 @@ function SettingComponent(props) {
 
   const handleToDeleteAccount = () => {
     if (msg !== "我想刪除帳號") {
-      window.alert("訊息錯誤");
+      window.alert("輸入錯誤");
     } else {
       boardService
         .deleteAccount(currentUser.user._id)
         .then(() => {
           AuthServe.logout();
-          window.alert("我們會想念你的。");
+          window.alert("刪除成功。");
           setCurrentUser(null);
           navigate("/register");
         })
