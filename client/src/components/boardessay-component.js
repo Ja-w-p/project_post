@@ -27,9 +27,7 @@ function BoardessayComponent(props) {
             {post.title}
           </a>
         </h5>
-
         <p className="col-md-3">作者：{post.auther}</p>
-
         <p className="col-md-4">發表日期：{post.date.substring(0, 10)}</p>
       </div>
     </div>

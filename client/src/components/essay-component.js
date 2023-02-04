@@ -170,7 +170,7 @@ function EssayComponent(props) {
 
             <hr />
           </div>
-          <div className="">
+          <div>
             <ReplyComponent currentUser={currentUser} />
           </div>
         </div>
