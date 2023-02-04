@@ -11,14 +11,13 @@ const ProfileComponent = (props) => {
   const handlePostEssay = () => {
     navigate("/postessay");
   };
+  const handleToSetting = () => {
+    navigate("/setting");
+  };
   const handleSetEssay = (_id) => {
     sessionStorage.setItem("_id", _id);
     navigate("/essay");
   };
-  const handleToSetting = () => {
-    navigate("/setting");
-  };
-
   useEffect(() => {
     console.log("Using Effect.");
     if (currentUser) {
@@ -90,11 +89,11 @@ const ProfileComponent = (props) => {
             </div>
           </div>
 
-          <div className="col-md-9 text-center bg-dark rounded-end-pill p-5">
-            <p className="fs-3 text-white">發表過的文章</p>
+          <div className="col-md-9 text-center bg-dark-subtle rounded-end-pill p-5">
+            <p className="fs-3">發表過的文章</p>
             {postData.length === 0 && (
               <div>
-                <p className="text-light-emphasis">還沒發表過任何文章。</p>
+                <p className="text-muted">還沒發表過任何文章。</p>
               </div>
             )}
             {postData.length !== 0 && (
@@ -125,7 +124,7 @@ const ProfileComponent = (props) => {
                           </a>
                         </p>
                         <p className="card-content">
-                          回應數：{post.reply.length}
+                          回應人數：{post.reply.length}
                         </p>
                       </div>
                       <div className="card-footer text-muted">
