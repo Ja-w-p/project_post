@@ -12,7 +12,7 @@ function SearchComponent(props) {
   const handleToSubmit = () => {
     sessionStorage.setItem("boardName", boardName);
     sessionStorage.setItem("keyword", keyword);
-    navigate("/search");
+    navigate("/searchessay");
   };
   return (
     <div>

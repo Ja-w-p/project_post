@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import boardService from "../services/board.service";
 import { useNavigate } from "react-router";
+import BoardessayComponent from "./boardessay-component";
 
-function SearchResultComponent(props) {
+function SearchEssayComponent(props) {
   let { currentUser } = props;
   let [searchData, setSearchData] = useState("");
   let navigate = useNavigate();
   let boardName = sessionStorage.getItem("boardName");
 
-  const handleSetEssay = (_id) => {
-    sessionStorage.setItem("_id", _id);
-    navigate("/essay");
-  };
   const handleToBoard = () => {
     navigate("/" + boardName);
   };
@@ -44,29 +41,7 @@ function SearchResultComponent(props) {
           {searchData.length !== 0 && (
             <div className="mx-5 px-5 pt-5">
               {searchData.map((post) => (
-                <div
-                  key={post._id}
-                  className="row border border-muted border-3 mx-5 my-2 pt-3 rounded-pill"
-                >
-                  <p className="col-md-1 fw-bold">{post.reply.length}</p>
-                  <h5 className="col-md-4">
-                    <a
-                      href="# "
-                      onClick={() => {
-                        handleSetEssay(post._id);
-                      }}
-                      className="link-dark"
-                    >
-                      {post.title}
-                    </a>
-                  </h5>
-
-                  <p className="col-md-3">作者：{post.auther}</p>
-
-                  <p className="col-md-4">
-                    發表日期：{post.date.substring(0, 10)}
-                  </p>
-                </div>
+                <BoardessayComponent post={post} />
               ))}
             </div>
           )}
@@ -87,4 +62,4 @@ function SearchResultComponent(props) {
   );
 }
 
-export default SearchResultComponent;
+export default SearchEssayComponent;

@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
 import boardService from "../services/board.service";
-import { useNavigate } from "react-router";
 import NotloginComponent from "./notlogin-component";
 import SearchComponent from "./search-component";
+import BoardessayComponent from "./boardessay-component";
 
 const BoardComponent = (props) => {
   let { currentUser, boardName } = props;
   let [postData, setPostData] = useState("");
-  const navigate = useNavigate();
-
-  const handleSetEssay = (_id) => {
-    sessionStorage.setItem("_id", _id);
-    navigate("/essay");
-  };
   useEffect(() => {
     console.log("Using effect");
     boardService
@@ -36,29 +30,7 @@ const BoardComponent = (props) => {
 
             <div className="mt-3">
               {postData.map((post) => (
-                <div
-                  key={post._id}
-                  className="row border border-light bg-dark-subtle mx-5 pt-3 rounded-top"
-                >
-                  <p className="col-md-1">{post.reply.length}</p>
-                  <h5 className="col-md-4">
-                    <a
-                      href="# "
-                      onClick={() => {
-                        handleSetEssay(post._id);
-                      }}
-                      className="link-dark text-decoration-none"
-                    >
-                      {post.title}
-                    </a>
-                  </h5>
-
-                  <p className="col-md-3">作者：{post.auther}</p>
-
-                  <p className="col-md-4">
-                    發表日期：{post.date.substring(0, 10)}
-                  </p>
-                </div>
+                <BoardessayComponent post={post} />
               ))}
             </div>
           </div>
