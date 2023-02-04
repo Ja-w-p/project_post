@@ -35,10 +35,10 @@ const BoardComponent = (props) => {
           <div className="mt-3 pt-3">
             <SearchComponent boardName={boardName} />
 
-            <div className="mt-3 text-center">
+            <div className="mt-3 mx-5 text-center">
               {postData.map((post) => (
                 <div key={post._id}>
-                  <div className="row border border-light bg-dark-subtle rounded-top">
+                  <div className="row border border-light bg-dark-subtle rounded">
                     <p className="col-md-1">{post.reply.length}</p>
                     <h5 className="col-md-4">
                       <a

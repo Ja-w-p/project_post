@@ -11,6 +11,7 @@ import EssayComponent from "./components/essay-component";
 import SearchEssayComponent from "./components/searchessay-component";
 import SettingComponent from "./components/setting-component";
 import AuthService from "./services/auth.service";
+import "./styles/animation.css";
 
 function App() {
   let [currentUser, setCurrentUser] = useState(AuthService.getCurrentUser());

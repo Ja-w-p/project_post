@@ -34,9 +34,9 @@ function ReplyComponent() {
   }, []);
   return (
     <div className="container">
-      <div className="mt-3 mx-5 px-5">
+      <div className="">
         {reply.length !== 0 && (
-          <div className="border  px-4 py-2 mb-3">
+          <div className="border px-2 py-2 rounded">
             {reply.map((reply) => (
               <div key={reply._id}>
                 <p>

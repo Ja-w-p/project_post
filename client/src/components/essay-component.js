@@ -68,7 +68,7 @@ function EssayComponent(props) {
       <NotloginComponent currentUser={currentUser} />
       {currentUser && (
         <div className="container">
-          <div className="mt-5 pt-3 mx-5 px-5">
+          <div className="mt-5 pt-3">
             {edit === "Yes" && currentUser.user.ID === essay.auther && (
               <div className="form-group text-center">
                 <div className="form-floating my-2">

@@ -28,10 +28,10 @@ const HomeComponent = (props) => {
 
   return (
     <main>
-      <div className="container pb-4">
-        <div className="p-2 bg-dark-subtle mt-5 rounded-start-pill">
+      <div className="container">
+        <div className="bg-dark-subtle mt-5 ms-5 py-5 rounded-pill d-flex">
           {!currentUser && (
-            <div>
+            <div className="p-5">
               <p className="fs-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
                 minima tenetur odio tempore fuga at voluptas natus inventore
@@ -44,8 +44,8 @@ const HomeComponent = (props) => {
             </div>
           )}
           {currentUser && postData && postData.length !== 0 && (
-            <div className="row">
-              <p className="fs-3 text-center">熱門文章</p>
+            <div className="row justify-content-center text-center">
+              <p className="fs-3">熱門文章</p>
               {postData.map((post) => (
                 <div
                   key={post._id}
