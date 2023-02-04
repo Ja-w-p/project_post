@@ -29,7 +29,7 @@ const HomeComponent = (props) => {
     <main>
       <div className="container pb-4">
         <div className="p-5 bg-dark mt-5 mx-5 rounded-start-pill">
-          <div className="p-4">
+          <div className="">
             {!currentUser && (
               <div>
                 <p className="fs-3 text-white">
@@ -49,7 +49,7 @@ const HomeComponent = (props) => {
                 {popularPost.map((post) => (
                   <div
                     key={post._id}
-                    className="card mb-1 mx-1 "
+                    className="card mb-1 mx-1"
                     style={{ width: "13rem" }}
                   >
                     <div className="card-body">

@@ -8,7 +8,7 @@ import ProfileComponent from "./components/profile-component";
 import BoardComponent from "./components/board-component";
 import PostessayComponent from "./components/postessay-component";
 import EssayComponent from "./components/essay-component";
-import SearchComponent from "./components/search-component";
+import SearchResultComponent from "./components/searchresult-component";
 import SettingComponent from "./components/setting-component";
 import AuthService from "./services/auth.service";
 
@@ -56,7 +56,7 @@ function App() {
         />
         <Route
           path="/search"
-          element={<SearchComponent currentUser={currentUser} />}
+          element={<SearchResultComponent currentUser={currentUser} />}
         />
         <Route
           path="setting"

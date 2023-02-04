@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import boardService from "../services/board.service";
+import ReplyformComponent from "./replyform-component";
 
-function ReplyComponent(props) {
-  let { currentUser } = props;
+function ReplyComponent() {
   let _id = sessionStorage.getItem("_id");
   let [reply, setReply] = useState("");
-  let [view, setView] = useState("無");
-  let [comment, setComment] = useState("");
-  let commentInput = document.getElementById("comment");
   const commentColor = (view) => {
     let color;
     switch (view) {
@@ -23,36 +20,6 @@ function ReplyComponent(props) {
     }
     return color;
   };
-  const handleChangeView = (e) => {
-    setView(e.target.value);
-  };
-  const handleChangeComment = (e) => {
-    setComment(e.target.value);
-  };
-  const handleToSubmit = () => {
-    if (comment.length === 0) {
-      window.alert("請輸入留言。");
-      return;
-    }
-    console.log("Submit中");
-    boardService
-      .postComment(view, comment, _id)
-      .then(() => {
-        boardService
-          .getPostID(_id)
-          .then((data) => {
-            setReply(data.data.reply);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    commentInput.value = "";
-  };
-
   useEffect(() => {
     console.log("Using Effect...");
     boardService
@@ -89,33 +56,7 @@ function ReplyComponent(props) {
       </div>
 
       <div className="mt-3 mx-5 px-5">
-        {currentUser && (
-          <div className="text-center">
-            <form className="d-flex justify-content-center flex-row">
-              <select
-                name="view"
-                id="view-select"
-                onChange={handleChangeView}
-                className="form-select"
-                style={{ width: "6.5rem" }}
-              >
-                <option value="無">無意見</option>
-                <option value="讚">認同</option>
-                <option value="噓">反對</option>
-              </select>
-              <input
-                id="comment"
-                type="text"
-                onChange={handleChangeComment}
-                className="w-50 mx-2 form-control"
-              />
-
-              <button onClick={handleToSubmit} className="btn btn-outline-dark">
-                送出
-              </button>
-            </form>
-          </div>
-        )}
+        <ReplyformComponent _id={_id} />
       </div>
     </div>
   );

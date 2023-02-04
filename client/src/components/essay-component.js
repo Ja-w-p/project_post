@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import boardService from "../services/board.service";
 import { useNavigate } from "react-router";
 import ReplyComponent from "./reply-component";
+import NotloginComponent from "./notlogin-component";
 
 function EssayComponent(props) {
   let { currentUser } = props;
@@ -12,9 +13,6 @@ function EssayComponent(props) {
   let _id = sessionStorage.getItem("_id");
   let navigate = useNavigate();
 
-  const handleToLogin = () => {
-    navigate("/login");
-  };
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -32,7 +30,6 @@ function EssayComponent(props) {
         console.log(error);
       });
   };
-
   const handleToConfirm = () => {
     let Yes = window.confirm("確定要刪除這篇文章嗎？");
     if (Yes) {
@@ -68,15 +65,7 @@ function EssayComponent(props) {
   }, []);
   return (
     <div>
-      {!currentUser && (
-        <div className="m-5 p-5 text-center">
-          <p className="fs-1 pb-3">＜請先登入＞</p>
-          <button className="btn btn-outline-dark" onClick={handleToLogin}>
-            前往登入頁
-          </button>
-        </div>
-      )}
-
+      <NotloginComponent currentUser={currentUser} />
       {currentUser && (
         <div className="container">
           <div className="mt-5 pt-3 mx-5 px-5">

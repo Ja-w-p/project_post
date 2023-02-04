@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import BoardService from "../services/board.service";
+import NotloginComponent from "./notlogin-component";
 
 const ProfileComponent = (props) => {
   const navigate = useNavigate();
   let { currentUser } = props;
   let [postData, setPostData] = useState("");
-
-  const handleToLogin = () => {
-    navigate("/login");
-  };
 
   const handlePostEssay = () => {
     navigate("/postessay");
@@ -38,14 +35,7 @@ const ProfileComponent = (props) => {
 
   return (
     <div className="container">
-      {!currentUser && (
-        <div className="m-5 p-5 text-center">
-          <p className="fs-1  pb-3">＜請先登入＞</p>
-          <button className="btn btn-outline-dark" onClick={handleToLogin}>
-            前往登入頁
-          </button>
-        </div>
-      )}
+      <NotloginComponent currentUser={currentUser} />
       {currentUser && (
         <div className="pt-5 row">
           <div className="col-md-3">

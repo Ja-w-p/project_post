@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import boardService from "../services/board.service";
 import AuthServe from "../services/auth.service";
+import NotloginComponent from "./notlogin-component";
 
 function SettingComponent(props) {
   let { currentUser, setCurrentUser } = props;
@@ -9,9 +10,6 @@ function SettingComponent(props) {
   let [flag, setFlag] = useState(0);
   let [newEmail, setNewEmail] = useState("");
   let [msg, setMsg] = useState("");
-  const handleToLogin = () => {
-    navigate("/login");
-  };
 
   const handleChangeNewEmail = (e) => {
     setNewEmail(e.target.value);
@@ -54,14 +52,7 @@ function SettingComponent(props) {
 
   return (
     <div>
-      {!currentUser && (
-        <div className="m-5 p-5 text-center">
-          <p className="fs-1 pb-3">＜請先登入＞</p>
-          <button className="btn btn-outline-dark" onClick={handleToLogin}>
-            前往登入頁
-          </button>
-        </div>
-      )}
+      <NotloginComponent currentUser={currentUser} />
       {currentUser && (
         <div className="container">
           <div className="text-center">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import BoardService from "../services/board.service";
+import NotloginComponent from "./notlogin-component";
 
 function PostessayComponent(props) {
   const navigate = useNavigate();
@@ -10,9 +11,6 @@ function PostessayComponent(props) {
   let [content, setContent] = useState("");
   let [message, setMessage] = useState("");
 
-  const handleToLogin = () => {
-    navigate("/login");
-  };
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -37,14 +35,7 @@ function PostessayComponent(props) {
   return (
     <div style={{ padding: "3rem" }}>
       <div className="p-5">
-        {!currentUser && (
-          <div className="m-5 p-5 text-center">
-            <p className="fs-1  pb-3">＜請先登入＞</p>
-            <button className="btn btn-outline-dark" onClick={handleToLogin}>
-              前往登入頁
-            </button>
-          </div>
-        )}
+        <NotloginComponent currentUser={currentUser} />
         {currentUser && (
           <div className="container">
             <div className="form-group text-center">
