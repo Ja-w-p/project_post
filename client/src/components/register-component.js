@@ -41,11 +41,14 @@ const RegisterComponent = () => {
   };
 
   return (
-    <div style={{ padding: "3rem" }} className="container">
-      <div className="mt-2 mx-5 p-5 bg-light">
+    <div className="container">
+      <div
+        className="d-flex align-items-center justify-content-center"
+        style={{ height: "80vh" }}
+      >
         {message && <div className="alert alert-danger">{message}</div>}
-        <div className="text-center px-5 mx-5">
-          <div className="form-floating">
+        <div className="text-center p-5 bg-light border rounded">
+          <div className="form-floating accountInput">
             <input
               onChange={handleChangeFirstName}
               className="form-control"
@@ -56,7 +59,7 @@ const RegisterComponent = () => {
             <label htmlFor="firstname">名字：</label>
           </div>
           <br />
-          <div className="form-floating">
+          <div className="form-floating accountInput">
             <input
               onChange={handleChangeLastName}
               className="form-control"
@@ -67,7 +70,7 @@ const RegisterComponent = () => {
             <label htmlFor="lastname">姓氏：</label>
           </div>
           <br />
-          <div className="form-floating">
+          <div className="form-floating accountInput">
             <input
               onChange={handleChangeEmail}
               className="form-control"
@@ -78,7 +81,7 @@ const RegisterComponent = () => {
             <label htmlFor="email">Email：</label>
           </div>
           <br />
-          <div className="form-floating">
+          <div className="form-floating accountInput">
             <input
               onChange={handleChangePassword}
               className="form-control"
@@ -89,7 +92,7 @@ const RegisterComponent = () => {
             <label htmlFor="password">密碼：</label>
           </div>
           <br />
-          <div className="form-floating">
+          <div className="form-floating accountInput">
             <input
               onChange={handleChangeID}
               className="form-control"

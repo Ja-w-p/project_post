@@ -33,13 +33,16 @@ function PostessayComponent(props) {
   };
 
   return (
-    <div style={{ padding: "3rem" }}>
-      <div className="p-5">
-        <NotloginComponent currentUser={currentUser} />
-        {currentUser && (
-          <div className="container">
-            <div className="form-group text-center">
-              <div className="form-floating">
+    <div>
+      <NotloginComponent currentUser={currentUser} />
+      {currentUser && (
+        <div
+          className="d-flex align-items-center justify-content-center"
+          style={{ height: "80vh" }}
+        >
+          <div className="form-group text-center bg-dark-subtle p-3 border border-dark-subtle rounded">
+            <div className="d-flex flex-row">
+              <div className="form-floating col">
                 <input
                   id="title"
                   type="text"
@@ -55,30 +58,31 @@ function PostessayComponent(props) {
                 name="category"
                 id="category-select"
                 onChange={handleChangeCategory}
-                className="form-control my-1"
+                className="form-control col"
               >
                 <option value="">--請選擇討論板--</option>
                 <option value="game">遊戲</option>
                 <option value="holo">Hololive</option>
                 <option value="food">美食</option>
               </select>
-
-              <textarea
-                id="content"
-                rows={10}
-                onChange={handleChangeContent}
-                className="form-control"
-              ></textarea>
-              <button
-                className="btn btn-outline-dark mt-3"
-                onClick={handleToSubmit}
-              >
-                發表文章
-              </button>
             </div>
+
+            <textarea
+              id="content"
+              rows={15}
+              onChange={handleChangeContent}
+              className="form-control"
+              style={{ width: "75vw" }}
+            ></textarea>
+            <button
+              className="btn btn-outline-dark mt-3"
+              onClick={handleToSubmit}
+            >
+              發表文章
+            </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {message && (
         <div className="alert alert-warning" role="alert">

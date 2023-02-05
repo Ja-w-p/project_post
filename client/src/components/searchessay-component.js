@@ -42,10 +42,13 @@ function SearchEssayComponent(props) {
             </button>
           </div>
           {searchData.length !== 0 && (
-            <div className="mx-5 px-5 pt-5">
+            <div className="mt-3 mx-5 text-center">
               {searchData.map((post) => (
-                <div key={post._id}>
-                  <div className="row border border-light bg-dark-subtle rounded-top">
+                <div
+                  key={post._id}
+                  className="border border-light bg-dark-subtle rounded-top post"
+                >
+                  <div className="row">
                     <p className="col-md-1">{post.reply.length}</p>
                     <h5 className="col-md-4">
                       <a
@@ -68,14 +71,8 @@ function SearchEssayComponent(props) {
             </div>
           )}
           {searchData.length === 0 && (
-            <div className="m-5 p-5 text-center">
-              <p className="fs-3">找不到符合條件的文章。</p>
-              <button
-                className="btn btn-outline-dark mt-3"
-                onClick={handleToBoard}
-              >
-                返回版面
-              </button>
+            <div className="p-5">
+              <p className="fs-3 text-center">找不到符合條件的文章。</p>
             </div>
           )}
         </div>

@@ -33,10 +33,13 @@ const LoginComponent = (props) => {
   };
   return (
     <div className="container">
-      <div className="mt-5 mx-5 p-5 bg-light">
+      <div
+        className="d-flex align-items-center justify-content-center"
+        style={{ height: "75vh" }}
+      >
         {message && <div className="alert alert-danger">{message}</div>}
-        <div className="text-center px-5 mx-5">
-          <div className="form-floating">
+        <div className="text-center p-5 bg-light border rounded">
+          <div className="form-floating accountInput">
             <input
               onChange={handleChangeEmail}
               type="email"
@@ -47,7 +50,7 @@ const LoginComponent = (props) => {
             <label htmlFor="email">Email</label>
           </div>
           <br />
-          <div className="form-floating">
+          <div className="form-floating accountInput">
             <input
               onChange={handleChangePassword}
               type="password"
@@ -58,7 +61,7 @@ const LoginComponent = (props) => {
             <label htmlFor="password">密碼</label>
           </div>
           <br />
-          <div className="">
+          <div>
             <button onClick={handleLogin} className="btn btn-outline-dark">
               登入
             </button>

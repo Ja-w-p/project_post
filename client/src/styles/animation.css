@@ -5,4 +5,34 @@
 
 .logo :hover {
   color: gray;
+  -webkit-animation-name: jump;
+          animation-name: jump;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.accountInput {
+  width: 25rem;
+}
+
+.post :hover {
+  background-color: white;
+}
+
+@-webkit-keyframes jump {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes jump {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }/*# sourceMappingURL=animation.css.map */

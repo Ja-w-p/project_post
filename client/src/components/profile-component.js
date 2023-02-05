@@ -98,11 +98,11 @@ const ProfileComponent = (props) => {
             )}
             {postData.length !== 0 && (
               <div className="container">
-                <div className="my-5 row">
+                <div className="row">
                   {postData.map((post) => (
                     <div
                       key={post._id}
-                      className="card mb-1 mx-1"
+                      className="card border border-dark m-1"
                       style={{ width: "13rem" }}
                     >
                       <div className="card-body">
@@ -112,14 +112,17 @@ const ProfileComponent = (props) => {
                             onClick={() => {
                               handleSetEssay(post._id);
                             }}
-                            className="link-dark"
+                            className="card-link link-dark"
                           >
                             {post.title}
                           </a>
                         </h5>
                         <p className="card-subtitle text-muted">
                           討論版：
-                          <a href={"/" + post.category} className="link-dark">
+                          <a
+                            href={"/" + post.category}
+                            className="card-link link-dark"
+                          >
                             {post.category}
                           </a>
                         </p>

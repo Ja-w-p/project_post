@@ -4,9 +4,27 @@
     color: white;
   }
 }
-
 .logo {
   :hover {
     color: gray;
+    animation-name: jump;
+    animation-duration: 2s;
+  }
+}
+.accountInput {
+  width: 25rem;
+}
+.post {
+  :hover {
+    background-color: white;
+  }
+}
+
+@keyframes jump {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
   }
 }

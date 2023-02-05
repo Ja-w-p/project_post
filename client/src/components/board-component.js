@@ -32,13 +32,16 @@ const BoardComponent = (props) => {
 
       {currentUser && postData && postData.length !== 0 && (
         <div className="container">
-          <div className="mt-3 pt-3">
+          <div className="mt-3 pt-3 ">
             <SearchComponent boardName={boardName} />
 
-            <div className="mt-3 mx-5 text-center">
+            <div className="mt-5 mx-5 text-center">
               {postData.map((post) => (
-                <div key={post._id}>
-                  <div className="row border border-light bg-dark-subtle rounded">
+                <div
+                  key={post._id}
+                  className="border border-dark-subtle rounded-end bg-dark-subtle post"
+                >
+                  <div className="row">
                     <p className="col-md-1">{post.reply.length}</p>
                     <h5 className="col-md-4">
                       <a

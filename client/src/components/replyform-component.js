@@ -38,7 +38,7 @@ function ReplyformComponent(props) {
   return (
     <div>
       <div className="text-center">
-        <form className="d-flex justify-content-center flex-row">
+        <form className="d-flex justify-content-center flex-row flex-wrap">
           <select
             name="view"
             id="view-select"
@@ -54,7 +54,7 @@ function ReplyformComponent(props) {
             id="comment"
             type="text"
             onChange={handleChangeComment}
-            className="w-50 mx-2 form-control"
+            className="w-50 mx-1 form-control"
           />
 
           <button onClick={handleToSubmit} className="btn btn-outline-dark">
