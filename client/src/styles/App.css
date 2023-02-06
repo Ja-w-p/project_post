@@ -12,8 +12,8 @@ body {
 }
 .logo :hover {
   color: #5e86c1;
-  -webkit-animation-name: jump;
-          animation-name: jump;
+  -webkit-animation-name: bigger;
+          animation-name: bigger;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
 }
@@ -31,7 +31,7 @@ body {
   background-color: #483d8b;
 }
 
-@-webkit-keyframes jump {
+@-webkit-keyframes bigger {
   from {
     transform: scale(1);
   }
@@ -40,7 +40,7 @@ body {
   }
 }
 
-@keyframes jump {
+@keyframes bigger {
   from {
     transform: scale(1);
   }
