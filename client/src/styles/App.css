@@ -9,9 +9,9 @@
 .logo :hover {
   color: gray;
   -webkit-animation-name: jump;
-          animation-name: jump;
+  animation-name: jump;
   -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  animation-duration: 2s;
 }
 
 .accountInput {
@@ -43,4 +43,4 @@
   to {
     transform: scale(1.1);
   }
-}/*# sourceMappingURL=App.css.map */
+} /*# sourceMappingURL=App.css.map */

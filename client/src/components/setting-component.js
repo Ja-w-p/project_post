@@ -55,16 +55,15 @@ function SettingComponent(props) {
       <NotloginComponent currentUser={currentUser} />
       {currentUser && (
         <div
-          className="container border rounded mt-3 text-light"
+          className="container border rounded mt-3 text-light bg-light-subtle"
           style={{ height: "85vh" }}
         >
           <p className="fs-2 mt-2 text-center">個人資料</p>
 
           <div className="mx-5 row">
             <div className="m-5 col">
-              <p>
-                姓名：{currentUser.user.firstName} {currentUser.user.lastName}
-              </p>
+              <p>姓：{currentUser.user.firstName}</p>
+              <p>名：{currentUser.user.lastName}</p>
               <p>聯絡信箱：{currentUser.user.email}</p>
               <div className="text-start">
                 <div className="btn-group" role="group">

@@ -84,7 +84,7 @@ const ProfileComponent = (props) => {
           </div>
 
           <div className="col-md-9 text-center bg-dark-subtle rounded-end-pill p-5">
-            <p className="fs-3">發表過的文章</p>
+            <p className="fs-3 text-light">發表過的文章</p>
             {postData.length === 0 && (
               <div>
                 <p className="text-muted">還沒發表過任何文章。</p>

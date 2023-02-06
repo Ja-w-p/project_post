@@ -39,7 +39,7 @@ const HomeComponent = (props) => {
           )}
           {currentUser && postData && postData.length !== 0 && (
             <div>
-              <p className="fs-3 text-center">熱門文章</p>
+              <p className="fs-3 text-center text-light">熱門文章</p>
               <EssaycardlistComponent postData={postData} />
             </div>
           )}

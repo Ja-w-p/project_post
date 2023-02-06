@@ -66,7 +66,7 @@ const LoginComponent = (props) => {
               登入
             </button>
           </div>
-          <a href="/register" className="text-info">
+          <a href="/register" className="link-light">
             沒有帳號嗎？讓我們先去註冊
           </a>
         </div>
