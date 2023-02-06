@@ -47,7 +47,7 @@ const RegisterComponent = () => {
         style={{ height: "80vh" }}
       >
         {message && <div className="alert alert-danger">{message}</div>}
-        <div className="text-center p-5 bg-light border rounded">
+        <div className="text-center p-5 bg-light-subtle border rounded">
           <div className="form-floating accountInput">
             <input
               onChange={handleChangeFirstName}

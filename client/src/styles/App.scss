@@ -5,7 +5,7 @@
   }
 }
 .logo {
-  color: black;
+  color: purple;
   :hover {
     color: gray;
     animation-name: jump;
@@ -17,7 +17,13 @@
 }
 .post {
   :hover {
-    background-color: white;
+    background-color: purple;
+    color: rgb(221, 214, 214);
+  }
+}
+.cardBox {
+  :hover {
+    background-color: purple;
   }
 }
 

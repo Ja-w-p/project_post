@@ -4,7 +4,7 @@
 }
 
 .logo {
-  color: black;
+  color: purple;
 }
 .logo :hover {
   color: gray;
@@ -19,7 +19,12 @@
 }
 
 .post :hover {
-  background-color: white;
+  background-color: purple;
+  color: rgb(221, 214, 214);
+}
+
+.cardBox :hover {
+  background-color: purple;
 }
 
 @-webkit-keyframes jump {

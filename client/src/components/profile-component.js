@@ -35,18 +35,18 @@ const ProfileComponent = (props) => {
       {currentUser && (
         <div className="pt-5 row">
           <div className="col-md-3">
-            <div className="card border-dark" style={{ width: "13rem" }}>
+            <div className="card border-light" style={{ width: "13rem" }}>
               <div className="card-body">
-                <h3 className="card-title text-center">
+                <h3 className="card-title text-center text-light">
                   {currentUser.user.ID}{" "}
                 </h3>
-                <p className="card-subtitle py-2 text-muted">
+                <p className="card-subtitle py-2 text-secondary-subtle">
                   發文數：{postData.length}
                 </p>
-                <div className="card-content text-center">
+                <div className="card-content text-center pt-2">
                   <button
                     onClick={handlePostEssay}
-                    className="btn btn-outline-dark"
+                    className="btn btn-outline-light"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -67,10 +67,7 @@ const ProfileComponent = (props) => {
               </div>
             </div>
             <div className="my-3">
-              <button
-                className="btn btn-outline-secondary"
-                onClick={handleToSetting}
-              >
+              <button className="btn btn-secondary" onClick={handleToSetting}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"

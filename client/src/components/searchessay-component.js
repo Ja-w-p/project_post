@@ -32,7 +32,7 @@ function SearchEssayComponent(props) {
         <div className="container">
           <div className="text-center mt-5">
             <button
-              className="btn btn-outline-dark mt-3"
+              className="btn btn-outline-light mt-3"
               onClick={handleToBoard}
             >
               返回版面

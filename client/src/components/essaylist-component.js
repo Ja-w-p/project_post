@@ -15,7 +15,7 @@ function EssaylistComponent(props) {
         {postData.map((post) => (
           <div
             key={post._id}
-            className="border border-dark-subtle rounded-end bg-light post"
+            className="border border-secondary-subtle rounded bg-dark-subtle post"
           >
             <div className="row">
               <p className="col-md-1">{post.reply.length}</p>
@@ -25,7 +25,7 @@ function EssaylistComponent(props) {
                   onClick={() => {
                     handleSetEssay(post._id);
                   }}
-                  className="link-dark text-decoration-none"
+                  className="link-light text-decoration-none"
                 >
                   {post.title}
                 </a>

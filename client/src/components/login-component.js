@@ -38,7 +38,7 @@ const LoginComponent = (props) => {
         style={{ height: "75vh" }}
       >
         {message && <div className="alert alert-danger">{message}</div>}
-        <div className="text-center p-5 bg-light border rounded">
+        <div className="text-center p-5 bg-light-subtle border rounded">
           <div className="form-floating accountInput">
             <input
               onChange={handleChangeEmail}
@@ -66,7 +66,7 @@ const LoginComponent = (props) => {
               登入
             </button>
           </div>
-          <a href="/register" className="text-muted">
+          <a href="/register" className="text-info">
             沒有帳號嗎？讓我們先去註冊
           </a>
         </div>

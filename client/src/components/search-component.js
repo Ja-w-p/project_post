@@ -24,7 +24,11 @@ function SearchComponent(props) {
           aria-label="Search"
           onChange={handleChangeKeyword}
         />
-        <button type="submit" className="btn btn-dark" onClick={handleToSubmit}>
+        <button
+          type="submit"
+          className="btn btn-secondary"
+          onClick={handleToSubmit}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

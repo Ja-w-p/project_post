@@ -55,13 +55,12 @@ function SettingComponent(props) {
       <NotloginComponent currentUser={currentUser} />
       {currentUser && (
         <div
-          className="container bg-light border rounded"
-          style={{ height: "80vh" }}
+          className="container border rounded mt-3 text-light"
+          style={{ height: "85vh" }}
         >
-          <div className="text-center">
-            <p className="fs-2 mt-2">個人資料</p>
-          </div>
-          <div className="m-5 row">
+          <p className="fs-2 mt-2 text-center">個人資料</p>
+
+          <div className="mx-5 row">
             <div className="m-5 col">
               <p>
                 姓名：{currentUser.user.firstName} {currentUser.user.lastName}
@@ -71,7 +70,7 @@ function SettingComponent(props) {
                 <div className="btn-group" role="group">
                   <button
                     type="button"
-                    className="btn btn-outline-dark dropdown-toggle"
+                    className="btn btn-secondary dropdown-toggle"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
@@ -155,7 +154,7 @@ function SettingComponent(props) {
                 >
                   <div
                     className="bg-danger-subtle border border-danger rounded p-4"
-                    style={{ width: "20rem" }}
+                    style={{ width: "22rem" }}
                   >
                     <div className="text-center mt-2">
                       <p className="fw-bold">
@@ -170,7 +169,7 @@ function SettingComponent(props) {
                       <div className="mt-3">
                         <button
                           onClick={handleToDeleteAccount}
-                          className="btn btn-danger"
+                          className="btn btn-outline-danger"
                         >
                           確認
                         </button>
@@ -178,7 +177,7 @@ function SettingComponent(props) {
                           onClick={() => {
                             setFlag(0);
                           }}
-                          className="btn btn-outline-secondary ms-2"
+                          className="btn btn-secondary ms-2"
                         >
                           取消
                         </button>
