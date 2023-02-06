@@ -61,7 +61,7 @@ function SettingComponent(props) {
           <p className="fs-2 mt-2 text-center">個人資料</p>
 
           <div className="row">
-            <div className="col-md-5 mx-4 mt-5">
+            <div className="col-md-6 mx-4 mt-5">
               <p>姓：{currentUser.user.firstName}</p>
               <p>名：{currentUser.user.lastName}</p>
               <p>聯絡信箱：{currentUser.user.email}</p>
@@ -110,7 +110,7 @@ function SettingComponent(props) {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-5">
               {flag === 1 && (
                 <div
                   className="d-flex align-items-center justify-content-center"

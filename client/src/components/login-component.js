@@ -62,7 +62,11 @@ const LoginComponent = (props) => {
           </div>
           <br />
           <div>
-            <button onClick={handleLogin} className="btn btn-dark">
+            <button
+              type="submit"
+              onClick={handleLogin}
+              className="btn btn-dark"
+            >
               登入
             </button>
           </div>

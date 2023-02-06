@@ -16,7 +16,7 @@ function SearchComponent(props) {
   };
   return (
     <div>
-      <div className="d-flex justify-content-center mx-5 pb-3">
+      <form className="d-flex justify-content-center mx-5 pb-3">
         <input
           className="w-50 form-control mx-3 border-secondary"
           type="Search"
@@ -41,7 +41,7 @@ function SearchComponent(props) {
           </svg>
           搜尋
         </button>
-      </div>
+      </form>
     </div>
   );
 }

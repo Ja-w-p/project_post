@@ -19,6 +19,7 @@ body {
 .accountInput {
   width: 25rem;
 }
+
 .post {
   :hover {
     background-color: #483d8b;
@@ -37,5 +38,11 @@ body {
   }
   to {
     transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .accountInput {
+    width: 70vw;
   }
 }
