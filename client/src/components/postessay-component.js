@@ -72,10 +72,10 @@ function PostessayComponent(props) {
               rows={15}
               onChange={handleChangeContent}
               className="form-control"
-              style={{ width: "75vw" }}
+              style={{ width: "90vw" }}
             ></textarea>
             <button
-              className="btn btn-outline-dark mt-3"
+              className="btn btn-outline-light mt-3"
               onClick={handleToSubmit}
             >
               發表文章

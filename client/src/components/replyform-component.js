@@ -57,7 +57,7 @@ function ReplyformComponent(props) {
             className="w-50 mx-1 form-control"
           />
 
-          <button onClick={handleToSubmit} className="btn btn-outline-dark">
+          <button onClick={handleToSubmit} className="btn btn-outline-light">
             送出
           </button>
         </form>
