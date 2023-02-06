@@ -34,7 +34,7 @@ const LoginComponent = (props) => {
   return (
     <div className="container">
       <div
-        className="d-flex align-items-center justify-content-center"
+        className="d-flex align-items-center justify-content-center flex-column"
         style={{ height: "75vh" }}
       >
         {message && <div className="alert alert-danger">{message}</div>}
