@@ -9,13 +9,13 @@ function ReplyComponent() {
     let color;
     switch (view) {
       case "讚":
-        color = "green";
+        color = "#36BF36";
         break;
       case "噓":
-        color = "red";
+        color = "#E60000";
         break;
       default:
-        color = "gray";
+        color = "#A9A9A9";
         break;
     }
     return color;

@@ -4,14 +4,14 @@ body {
 
 .bar {
   :hover {
-    background-color: gray;
+    background-color: #5e86c1;
     color: white;
   }
 }
 .logo {
-  color: purple;
+  color: #7b68ee;
   :hover {
-    color: gray;
+    color: #5e86c1;
     animation-name: jump;
     animation-duration: 2s;
   }
@@ -21,13 +21,13 @@ body {
 }
 .post {
   :hover {
-    background-color: purple;
+    background-color: #483d8b;
     color: rgb(221, 214, 214);
   }
 }
 .cardBox {
   :hover {
-    background-color: purple;
+    background-color: #483d8b;
   }
 }
 

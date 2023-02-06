@@ -19,7 +19,7 @@ function EssaylistComponent(props) {
           >
             <div className="row">
               <p className="col-md-1">{post.reply.length}</p>
-              <h5 className="col-md-4">
+              <h5 className="col-md-6">
                 <a
                   href="# "
                   onClick={() => {
@@ -30,8 +30,8 @@ function EssaylistComponent(props) {
                   {post.title}
                 </a>
               </h5>
-              <p className="col-md-3">作者：{post.auther}</p>
-              <p className="col-md-4">發表日期：{post.date.substring(0, 10)}</p>
+              <p className="col-md-2">作者：{post.auther}</p>
+              <p className="col-md-3">發表日期：{post.date.substring(0, 10)}</p>
             </div>
           </div>
         ))}

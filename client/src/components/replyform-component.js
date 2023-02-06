@@ -54,7 +54,7 @@ function ReplyformComponent(props) {
             id="comment"
             type="text"
             onChange={handleChangeComment}
-            className="w-50 mx-1 form-control"
+            className="w-50 mx-1 form-control border-secondary"
           />
 
           <button onClick={handleToSubmit} className="btn btn-outline-light">

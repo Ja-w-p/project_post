@@ -115,11 +115,13 @@ function EssayComponent(props) {
               <div className="container">
                 <div className="card text-center mb-3">
                   <div className="card-body">
-                    <h3 className="card-title">{essay.title}</h3>
-                    <p className="card-subtitle mb-3 text-muted">
+                    <h3 className="card-title text-light">{essay.title}</h3>
+                    <p className="card-subtitle mb-3 text-secondary-subtle">
                       {essay.auther}
                     </p>
-                    <p className="card-text">{essay.content}</p>
+                    <p className="card-text text-light-subtle">
+                      {essay.content}
+                    </p>
                   </div>
                   {currentUser.user.ID === essay.auther && (
                     <div className="m-1 text-end">
@@ -163,7 +165,9 @@ function EssayComponent(props) {
                       </div>
                     </div>
                   )}
-                  <div className="card-footer text-muted">{essay.date}</div>
+                  <div className="card-footer text-light-subtle">
+                    {essay.date}
+                  </div>
                 </div>
               </div>
             )}

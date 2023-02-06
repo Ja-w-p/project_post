@@ -62,7 +62,7 @@ const ProfileComponent = (props) => {
                   </button>
                 </div>
               </div>
-              <div className="card-footer text-muted">
+              <div className="card-footer text-secondary-subtle">
                 註冊日期：{currentUser.user.date.substring(0, 10)}
               </div>
             </div>

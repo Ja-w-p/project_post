@@ -1,17 +1,21 @@
+body {
+  background-color: linear-gradient(45deg, red 50%, black 50%);
+}
+
 .bar :hover {
-  background-color: gray;
+  background-color: #5e86c1;
   color: white;
 }
 
 .logo {
-  color: purple;
+  color: #7b68ee;
 }
 .logo :hover {
-  color: gray;
+  color: #5e86c1;
   -webkit-animation-name: jump;
-  animation-name: jump;
+          animation-name: jump;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .accountInput {
@@ -19,12 +23,12 @@
 }
 
 .post :hover {
-  background-color: purple;
+  background-color: #483d8b;
   color: rgb(221, 214, 214);
 }
 
 .cardBox :hover {
-  background-color: purple;
+  background-color: #483d8b;
 }
 
 @-webkit-keyframes jump {
@@ -43,4 +47,4 @@
   to {
     transform: scale(1.1);
   }
-} /*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=App.css.map */

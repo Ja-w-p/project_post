@@ -11,7 +11,7 @@ const NavComponent = (props) => {
     setCurrentUser(null);
   };
   return (
-    <div>
+    <div className="bg-light-subtle">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="nav-brand fs-1 logo me-3" to="/">
