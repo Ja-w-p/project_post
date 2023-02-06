@@ -54,7 +54,10 @@ function SettingComponent(props) {
     <div>
       <NotloginComponent currentUser={currentUser} />
       {currentUser && (
-        <div className="container bg-light border rounded">
+        <div
+          className="container bg-light border rounded"
+          style={{ height: "80vh" }}
+        >
           <div className="text-center">
             <p className="fs-2 mt-2">個人資料</p>
           </div>

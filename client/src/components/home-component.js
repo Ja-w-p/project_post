@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import boardService from "../services/board.service";
-import { useNavigate } from "react-router-dom";
+import EssaycardlistComponent from "./essaycardlist-component";
 
 const HomeComponent = (props) => {
   let { currentUser } = props;
   let [postData, setPostData] = useState("");
-
-  let navigate = useNavigate();
-
-  const handleSetEssay = (_id) => {
-    sessionStorage.setItem("_id", _id);
-    navigate("/essay");
-  };
 
   useEffect(() => {
     if (currentUser) {
@@ -24,7 +17,8 @@ const HomeComponent = (props) => {
           console.log(error);
         });
     }
-  });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <main>
@@ -44,44 +38,9 @@ const HomeComponent = (props) => {
             </div>
           )}
           {currentUser && postData && postData.length !== 0 && (
-            <div className="row justify-content-center text-center">
-              <p className="fs-3">熱門文章</p>
-              {postData.map((post) => (
-                <div
-                  key={post._id}
-                  className="card m-1"
-                  style={{ width: "13rem" }}
-                >
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      <a
-                        href="# "
-                        onClick={() => {
-                          handleSetEssay(post._id);
-                        }}
-                        className="card-link link-dark"
-                      >
-                        {post.title}
-                      </a>
-                    </h5>
-                    <p className="card-subtitle text-muted">
-                      討論版：
-                      <a
-                        href={"/" + post.category}
-                        className="card-link link-dark"
-                      >
-                        {post.category}
-                      </a>
-                    </p>
-                    <p className="card-content">
-                      討論人數：{post.reply.length}
-                    </p>
-                  </div>
-                  <div className="card-footer text-muted">
-                    日期：{post.date.substring(0, 10)}
-                  </div>
-                </div>
-              ))}
+            <div>
+              <p className="fs-3 text-center">熱門文章</p>
+              <EssaycardlistComponent postData={postData} />
             </div>
           )}
         </div>

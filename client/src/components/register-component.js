@@ -107,7 +107,7 @@ const RegisterComponent = () => {
             <button
               type="button"
               onClick={handleRegister}
-              className="btn btn-outline-dark"
+              className="btn btn-dark"
             >
               送出
             </button>

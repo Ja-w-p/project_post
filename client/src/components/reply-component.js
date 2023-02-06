@@ -55,7 +55,7 @@ function ReplyComponent() {
         )}
       </div>
 
-      <div className="mt-3">
+      <div className="my-3">
         <ReplyformComponent _id={_id} />
       </div>
     </div>

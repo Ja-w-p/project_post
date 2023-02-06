@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import boardService from "../services/board.service";
 import { useNavigate } from "react-router";
+import EssaylistComponent from "./essaylist-component";
 
 function SearchEssayComponent(props) {
   let { currentUser } = props;
@@ -10,10 +11,6 @@ function SearchEssayComponent(props) {
 
   const handleToBoard = () => {
     navigate("/" + boardName);
-  };
-  const handleSetEssay = (_id) => {
-    sessionStorage.setItem("_id", _id);
-    navigate("/essay");
   };
   useEffect(() => {
     console.log("Using effect");
@@ -42,32 +39,8 @@ function SearchEssayComponent(props) {
             </button>
           </div>
           {searchData.length !== 0 && (
-            <div className="mt-3 mx-5 text-center">
-              {searchData.map((post) => (
-                <div
-                  key={post._id}
-                  className="border border-light bg-dark-subtle rounded-top post"
-                >
-                  <div className="row">
-                    <p className="col-md-1">{post.reply.length}</p>
-                    <h5 className="col-md-4">
-                      <a
-                        href="# "
-                        onClick={() => {
-                          handleSetEssay(post._id);
-                        }}
-                        className="link-dark text-decoration-none"
-                      >
-                        {post.title}
-                      </a>
-                    </h5>
-                    <p className="col-md-3">作者：{post.auther}</p>
-                    <p className="col-md-4">
-                      發表日期：{post.date.substring(0, 10)}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="d-flex justify-content-center">
+              <EssaylistComponent postData={searchData} />
             </div>
           )}
           {searchData.length === 0 && (

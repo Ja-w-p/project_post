@@ -3,6 +3,9 @@
   color: white;
 }
 
+.logo {
+  color: black;
+}
 .logo :hover {
   color: gray;
   -webkit-animation-name: jump;

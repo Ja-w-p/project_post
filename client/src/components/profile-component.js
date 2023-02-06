@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import BoardService from "../services/board.service";
 import NotloginComponent from "./notlogin-component";
+import EssaycardlistComponent from "./essaycardlist-component";
 
 const ProfileComponent = (props) => {
   const navigate = useNavigate();
@@ -13,10 +14,6 @@ const ProfileComponent = (props) => {
   };
   const handleToSetting = () => {
     navigate("/setting");
-  };
-  const handleSetEssay = (_id) => {
-    sessionStorage.setItem("_id", _id);
-    navigate("/essay");
   };
   useEffect(() => {
     console.log("Using Effect.");
@@ -69,7 +66,7 @@ const ProfileComponent = (props) => {
                 註冊日期：{currentUser.user.date.substring(0, 10)}
               </div>
             </div>
-            <div className="mt-3">
+            <div className="my-3">
               <button
                 className="btn btn-outline-secondary"
                 onClick={handleToSetting}
@@ -98,44 +95,7 @@ const ProfileComponent = (props) => {
             )}
             {postData.length !== 0 && (
               <div className="container">
-                <div className="row">
-                  {postData.map((post) => (
-                    <div
-                      key={post._id}
-                      className="card border border-dark m-1"
-                      style={{ width: "13rem" }}
-                    >
-                      <div className="card-body">
-                        <h5 className="card-title">
-                          <a
-                            href="# "
-                            onClick={() => {
-                              handleSetEssay(post._id);
-                            }}
-                            className="card-link link-dark"
-                          >
-                            {post.title}
-                          </a>
-                        </h5>
-                        <p className="card-subtitle text-muted">
-                          討論版：
-                          <a
-                            href={"/" + post.category}
-                            className="card-link link-dark"
-                          >
-                            {post.category}
-                          </a>
-                        </p>
-                        <p className="card-content">
-                          回應人數：{post.reply.length}
-                        </p>
-                      </div>
-                      <div className="card-footer text-muted">
-                        日期：{post.date.substring(0, 10)}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <EssaycardlistComponent postData={postData} />
               </div>
             )}
           </div>
