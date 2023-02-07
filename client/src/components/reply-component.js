@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import boardService from "../services/board.service";
 
 function ReplyComponent() {
@@ -6,7 +6,7 @@ function ReplyComponent() {
   let [reply, setReply] = useState("");
   let [view, setView] = useState("無");
   let [comment, setComment] = useState("");
-  let commentInput = document.getElementById("comment");
+  let commentInputRef = useRef();
   const commentColor = (view) => {
     let color;
     switch (view) {
@@ -50,7 +50,7 @@ function ReplyComponent() {
       .catch((error) => {
         console.log(error);
       });
-    commentInput.value = "";
+    commentInputRef.value = "";
   };
   useEffect(() => {
     console.log("Using Effect...");
@@ -100,7 +100,7 @@ function ReplyComponent() {
               <option value="噓">反對</option>
             </select>
             <input
-              id="comment"
+              ref={commentInputRef}
               type="text"
               onChange={handleChangeComment}
               className="w-50 mx-1 form-control border-secondary"
