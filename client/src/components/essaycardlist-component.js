@@ -19,15 +19,14 @@ function EssaycardlistComponent(props) {
         >
           <div className="card-body">
             <h5 className="card-title">
-              <a
-                href="# "
+              <button
                 onClick={() => {
                   handleSetEssay(post._id);
                 }}
-                className="card-link link-light text-decoration-none"
+                className="titleButton text-decoration-none"
               >
                 {post.title}
-              </a>
+              </button>
             </h5>
             <p className="card-subtitle text-secondary-subtle">
               討論版：
@@ -35,7 +34,7 @@ function EssaycardlistComponent(props) {
                 {post.category}
               </a>
             </p>
-            <p className="card-content">討論人數：{post.reply.length}</p>
+            <p className="card-content">留言數：{post.reply.length}</p>
           </div>
           <div className="card-footer text-secondary-subtle">
             日期：{post.date.substring(0, 10)}

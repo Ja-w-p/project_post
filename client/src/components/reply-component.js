@@ -6,7 +6,7 @@ function ReplyComponent() {
   let [reply, setReply] = useState("");
   let [view, setView] = useState("無");
   let [comment, setComment] = useState("");
-  let commentInputRef = useRef();
+  let commentInputRef = useRef(null);
   const commentColor = (view) => {
     let color;
     switch (view) {
@@ -50,7 +50,9 @@ function ReplyComponent() {
       .catch((error) => {
         console.log(error);
       });
-    commentInputRef.value = "";
+    setComment("");
+    commentInputRef.current.focus();
+    commentInputRef.current.value = "";
   };
   useEffect(() => {
     console.log("Using Effect...");

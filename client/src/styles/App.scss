@@ -28,6 +28,12 @@
   }
 }
 
+.titleButton {
+  border: 0;
+  background-color: transparent;
+  color: rgb(255, 254, 254);
+}
+
 @keyframes bigger {
   from {
     transform: scale(1);

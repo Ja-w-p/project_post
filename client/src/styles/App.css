@@ -27,6 +27,12 @@
   background-color: #483d8b;
 }
 
+.titleButton {
+  border: 0;
+  background-color: transparent;
+  color: rgb(255, 254, 254);
+}
+
 @-webkit-keyframes bigger {
   from {
     transform: scale(1);

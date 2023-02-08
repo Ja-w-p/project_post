@@ -20,15 +20,14 @@ function EssaylistComponent(props) {
             <div className="row">
               <p className="col-md-1">{post.reply.length}</p>
               <h5 className="col-md-6">
-                <a
-                  href="# "
+                <button
                   onClick={() => {
                     handleSetEssay(post._id);
                   }}
-                  className="link-light text-decoration-none"
+                  className="titleButton text-decoration-none"
                 >
                   {post.title}
-                </a>
+                </button>
               </h5>
               <p className="col-md-2">作者：{post.auther}</p>
               <p className="col-md-3">發表日期：{post.date.substring(0, 10)}</p>
