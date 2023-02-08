@@ -33,7 +33,6 @@ function EssaylistComponent(props) {
   return (
     <div>
       <div className="text-center" style={{ width: "60vw" }}>
-        {/* {postData.map((post) => ( */}
         {currentPosts.map((post) => (
           <div
             key={post._id}
