@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
 import boardService from "../services/board.service";
 import EssaycardlistComponent from "./essaycardlist-component";
+import LoadingpageComponent from "./loadingpage-component";
 
 const HomeComponent = (props) => {
   let { currentUser } = props;
   let [postData, setPostData] = useState("");
+  let [loading, setLoading] = useState(null);
 
   useEffect(() => {
+    console.log("Using Effect...");
+    setLoading(true);
     if (currentUser) {
       boardService
         .getMostPopular()
         .then((post) => {
           setPostData(post.data);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error);
@@ -23,6 +28,7 @@ const HomeComponent = (props) => {
   return (
     <main>
       <div className="container">
+        {loading && currentUser && <LoadingpageComponent />}
         <div className="bg-dark-subtle mt-5 ms-5 py-5 rounded-pill d-flex">
           {!currentUser && (
             <div className="p-5">
@@ -37,10 +43,14 @@ const HomeComponent = (props) => {
               </p>
             </div>
           )}
-          {currentUser && postData && postData.length !== 0 && (
+          {currentUser && (
             <div>
-              <p className="fs-3 text-center text-light">熱門文章</p>
-              <EssaycardlistComponent postData={postData} />
+              {postData.length !== 0 && (
+                <div>
+                  <p className="fs-3 text-center text-light">熱門文章</p>
+                  <EssaycardlistComponent postData={postData} />
+                </div>
+              )}
             </div>
           )}
         </div>

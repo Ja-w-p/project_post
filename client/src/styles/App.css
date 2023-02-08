@@ -33,6 +33,30 @@
   color: rgb(255, 254, 254);
 }
 
+.bi-gear-fill {
+  -webkit-animation-name: loadingRotate;
+          animation-name: loadingRotate;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+@-webkit-keyframes loadingRotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes loadingRotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
 @-webkit-keyframes bigger {
   from {
     transform: scale(1);
@@ -41,7 +65,6 @@
     transform: scale(1.1);
   }
 }
-
 @keyframes bigger {
   from {
     transform: scale(1);

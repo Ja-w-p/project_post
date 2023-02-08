@@ -11,7 +11,7 @@ function EssaylistComponent(props) {
   };
   return (
     <div>
-      <div className="mt-5 text-center" style={{ width: "60vw" }}>
+      <div className="text-center" style={{ width: "60vw" }}>
         {postData.map((post) => (
           <div
             key={post._id}

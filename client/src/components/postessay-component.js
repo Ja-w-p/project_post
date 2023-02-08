@@ -5,17 +5,14 @@ import NotloginComponent from "./notlogin-component";
 
 function PostessayComponent(props) {
   const navigate = useNavigate();
+  let category = sessionStorage.getItem("boardName");
   let { currentUser } = props;
   let [title, setTitle] = useState("");
-  let [category, setCategory] = useState("");
   let [content, setContent] = useState("");
   let [message, setMessage] = useState("");
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
-  };
-  const handleChangeCategory = (e) => {
-    setCategory(e.target.value);
   };
   const handleChangeContent = (e) => {
     setContent(e.target.value);
@@ -53,18 +50,6 @@ function PostessayComponent(props) {
                 />
                 <label htmlFor="title">標題:</label>
               </div>
-
-              <select
-                name="category"
-                id="category-select"
-                onChange={handleChangeCategory}
-                className="form-control col"
-              >
-                <option value="">--請選擇討論板--</option>
-                <option value="game">遊戲</option>
-                <option value="holo">Hololive</option>
-                <option value="food">美食</option>
-              </select>
             </div>
 
             <textarea

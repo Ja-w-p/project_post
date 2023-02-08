@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const authRoute = require("./routes").auth;
 const postRoute = require("./routes").post;
+const accountRoute = require("./routes").account;
 const passport = require("passport");
 ///config/passport exports了一個function 所以直接放入他需要的passport
 require("./config/passport")(passport);
@@ -32,6 +33,13 @@ app.use(
     session: false,
   }),
   postRoute
+);
+app.use(
+  "/api/account",
+  passport.authenticate("jwt", {
+    session: false,
+  }),
+  accountRoute
 );
 
 app.get("/", (req, res) => {

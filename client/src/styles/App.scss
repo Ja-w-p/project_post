@@ -33,6 +33,19 @@
   background-color: transparent;
   color: rgb(255, 254, 254);
 }
+.bi-gear-fill {
+  animation-name: loadingRotate;
+  animation-duration: 5s;
+}
+
+@keyframes loadingRotate {
+  from {
+    rotate: (0deg);
+  }
+  to {
+    rotate: (360deg);
+  }
+}
 
 @keyframes bigger {
   from {
