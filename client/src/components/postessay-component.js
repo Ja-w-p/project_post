@@ -17,6 +17,9 @@ function PostessayComponent(props) {
   const handleChangeContent = (e) => {
     setContent(e.target.value);
   };
+  const handleToBoard = () => {
+    navigate("/" + category);
+  };
   const handleToSubmit = () => {
     BoardService.postEssay(title, category, content)
       .then(() => {
@@ -64,6 +67,12 @@ function PostessayComponent(props) {
               onClick={handleToSubmit}
             >
               發表文章
+            </button>
+            <button
+              className="btn btn-outline-secondary mt-3 ms-3"
+              onClick={handleToBoard}
+            >
+              取消
             </button>
           </div>
         </div>

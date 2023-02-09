@@ -35,7 +35,7 @@ function EssayComponent(props) {
     if (Yes) {
       handleToDeleteEssay();
     } else {
-      window.alert("(*´▽`*)");
+      window.alert("ok");
     }
   };
   const handleToDeleteEssay = () => {

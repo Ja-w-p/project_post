@@ -9,7 +9,7 @@ class AccountSerivice {
     } else {
       token = "";
     }
-    return axios.delete(API_URL + _id, {
+    return axios.delete(API_URL + "/" + _id, {
       headers: {
         Authorization: token,
       },

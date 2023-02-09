@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import boardService from "../services/board.service";
+import LoadingpageComponent from "./loadingpage-component";
 
 function ReplyComponent() {
   let _id = sessionStorage.getItem("_id");
   let [reply, setReply] = useState("");
   let [view, setView] = useState("無");
   let [comment, setComment] = useState("");
+  let [loading, setLoading] = useState(null);
   let commentInputRef = useRef(null);
   const commentColor = (view) => {
     let color;
@@ -56,10 +58,12 @@ function ReplyComponent() {
   };
   useEffect(() => {
     console.log("Using Effect...");
+    setLoading(true);
     boardService
       .getPostID(_id)
       .then((data) => {
         setReply(data.data.reply);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -68,6 +72,7 @@ function ReplyComponent() {
   }, []);
   return (
     <div className="container">
+      {loading && <LoadingpageComponent />}
       {reply.length !== 0 && (
         <div className="border px-2 py-2 rounded">
           {reply.map((reply) => (
