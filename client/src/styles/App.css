@@ -3,9 +3,6 @@
   color: white;
 }
 
-.logo {
-  color: #7b68ee;
-}
 .logo :hover {
   color: #5e86c1;
   -webkit-animation-name: bigger;
@@ -25,6 +22,68 @@
 
 .cardBox :hover {
   background-color: #483d8b;
+}
+
+.chat {
+  -webkit-animation-name: bigger;
+          animation-name: bigger;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.chatGreen {
+  -webkit-animation-name: moveToTopAndLeave;
+          animation-name: moveToTopAndLeave;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.chatRed {
+  -webkit-animation-name: moveToTopAndLeave;
+          animation-name: moveToTopAndLeave;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.chatGary {
+  -webkit-animation-name: moveToTopAndLeave;
+          animation-name: moveToTopAndLeave;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.reverseChat {
+  transform: scale(-1, 1);
+}
+
+.heartDiv {
+  text-align: center;
+  display: none;
+}
+
+.bi-chat-square-heart {
+  -webkit-animation-name: bigger;
+          animation-name: bigger;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .titleButton {
@@ -49,6 +108,37 @@
   font-size: 1.5rem;
 }
 
+@-webkit-keyframes moveToTopAndLeave {
+  0% {
+    margin-top: 100%;
+    opacity: 1;
+  }
+  50% {
+    margin-top: 0%;
+    opacity: 0.5;
+  }
+  100% {
+    display: none;
+    margin-top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveToTopAndLeave {
+  0% {
+    margin-top: 100%;
+    opacity: 1;
+  }
+  50% {
+    margin-top: 0%;
+    opacity: 0.5;
+  }
+  100% {
+    display: none;
+    margin-top: 100%;
+    opacity: 0;
+  }
+}
 @-webkit-keyframes loadingRotate {
   from {
     rotate: 0deg;
@@ -57,7 +147,6 @@
     rotate: 360deg;
   }
 }
-
 @keyframes loadingRotate {
   from {
     rotate: 0deg;
@@ -67,23 +156,57 @@
   }
 }
 @-webkit-keyframes bigger {
-  from {
+  0% {
     transform: scale(1);
+    opacity: 0.5;
   }
-  to {
+  50% {
     transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
   }
 }
 @keyframes bigger {
-  from {
+  0% {
     transform: scale(1);
+    opacity: 0.5;
   }
-  to {
+  50% {
     transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
   }
 }
 @media screen and (max-width: 450px) {
   .accountInput {
     width: 70vw;
+  }
+}
+@media screen and (max-width: 700px) {
+  .chatRed {
+    display: none;
+  }
+  .chatGary {
+    display: none;
+  }
+  .chatGreen {
+    display: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  .bi-person-video3 {
+    display: none;
+  }
+  .bi-chat-square-text-fill {
+    display: none;
+  }
+  .heartDiv {
+    display: block;
   }
 }/*# sourceMappingURL=App.css.map */

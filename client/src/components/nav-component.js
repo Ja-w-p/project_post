@@ -19,7 +19,7 @@ const NavComponent = (props) => {
               xmlns="http://www.w3.org/2000/svg"
               width="60"
               height="60"
-              fill="currentColor"
+              fill=" #7b68ee"
               className="bi bi-house-door-fill"
               viewBox="0 0 16 16"
             >

@@ -262,7 +262,7 @@ router.get("/mostpopular", (req, res) => {
         }
       }
       list = mergeSort(list);
-      list = list.slice(0, 10);
+      list = list.slice(0, 8);
 
       res.send(list);
     })
