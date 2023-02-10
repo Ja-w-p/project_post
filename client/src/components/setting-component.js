@@ -9,7 +9,7 @@ function SettingComponent(props) {
   let navigate = useNavigate();
   let [flag, setFlag] = useState(0);
   let [newEmail, setNewEmail] = useState("");
-  let [inputMsg, setInputMsg] = useState("");
+  let [inputMsg, setInputMsg] = useState(""); //驗證使用者刪除帳號的訊息
   let [errMsg, setErrMsg] = useState("");
 
   const handleChangeNewEmail = (e) => {

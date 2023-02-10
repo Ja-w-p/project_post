@@ -8,7 +8,7 @@ function ReplyComponent() {
   let [view, setView] = useState("無");
   let [comment, setComment] = useState("");
   let [loading, setLoading] = useState(null);
-  let commentInputRef = useRef(null);
+  let commentInputRef = useRef(null); //綁定留言輸入欄，使用者送出留言後就清空欄位
   const commentColor = (view) => {
     let color;
     switch (view) {

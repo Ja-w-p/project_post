@@ -8,6 +8,7 @@ function EssayComponent(props) {
   let { currentUser } = props;
   let [essay, setEssay] = useState("");
   let [edit, setEdit] = useState("No");
+  //設title跟content的state是為了讓編輯時能顯示原本文章的內容，讓使用者可以直接修改現有文章，不用從頭打
   let [title, setTitle] = useState("");
   let [content, setContent] = useState("");
   let _id = sessionStorage.getItem("_id");
