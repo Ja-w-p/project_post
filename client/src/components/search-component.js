@@ -16,13 +16,14 @@ function SearchComponent(props) {
   };
   return (
     <div>
-      <form className="d-flex justify-content-center mx-5 pb-3">
+      <form className="d-flex justify-content-center pb-3">
         <input
           className="w-50 form-control mx-3 border-secondary"
           type="Search"
           placeholder="Search"
           aria-label="Search"
           onChange={handleChangeKeyword}
+          style={{ width: "70vw" }}
         />
         <button
           type="submit"

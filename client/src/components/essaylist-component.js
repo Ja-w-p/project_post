@@ -32,7 +32,7 @@ function EssaylistComponent(props) {
   };
   return (
     <div>
-      <div className="text-center" style={{ width: "60vw" }}>
+      <div className="text-center" style={{ width: "70vw" }}>
         {currentPosts.map((post) => (
           <div
             key={post._id}
