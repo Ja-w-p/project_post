@@ -10,14 +10,13 @@ function SearchEssayComponent(props) {
   let [loading, setLoading] = useState(null);
   let navigate = useNavigate();
   let boardName = sessionStorage.getItem("boardName");
-
+  let keyword = sessionStorage.getItem("keyword");
   const handleToBoard = () => {
     navigate("/" + boardName);
   };
   useEffect(() => {
     console.log("Using effect");
     setLoading(true);
-    let keyword = sessionStorage.getItem("keyword");
     boardService
       .getSeaech(boardName, keyword)
       .then((post) => {
@@ -37,6 +36,7 @@ function SearchEssayComponent(props) {
           {loading && <LoadingpageComponent />}
           {!loading && (
             <div className="text-center mt-5">
+              <p className="fs-3">包含 「{keyword}」 的文章標題如下：</p>
               <button
                 className="btn btn-outline-light my-3"
                 onClick={handleToBoard}

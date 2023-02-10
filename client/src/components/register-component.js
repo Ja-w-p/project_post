@@ -101,6 +101,7 @@ const RegisterComponent = () => {
               placeholder="id"
             />
             <label htmlFor="ID">ID：</label>
+            <p className="mb-0">ID是使用者在網站中的暱稱，無法變更。</p>
           </div>
           <br />
           <div>
