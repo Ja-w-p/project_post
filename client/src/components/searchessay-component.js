@@ -8,7 +8,7 @@ function SearchEssayComponent(props) {
   let { currentUser } = props;
   let [searchData, setSearchData] = useState("");
   let [loading, setLoading] = useState(null);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   let boardName = sessionStorage.getItem("boardName");
   let keyword = sessionStorage.getItem("keyword");
   const handleToBoard = () => {

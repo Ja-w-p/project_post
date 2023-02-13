@@ -6,7 +6,7 @@ import NotloginComponent from "./notlogin-component";
 
 function SettingComponent(props) {
   let { currentUser, setCurrentUser } = props;
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   let [flag, setFlag] = useState(0);
   let [newEmail, setNewEmail] = useState("");
   let [inputMsg, setInputMsg] = useState(""); //驗證使用者刪除帳號的訊息

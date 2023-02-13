@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function SearchComponent(props) {
   let { boardName } = props;
   let [keyword, setKeyword] = useState("");
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChangeKeyword = (e) => {
     setKeyword(e.target.value);

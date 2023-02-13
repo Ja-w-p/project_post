@@ -12,7 +12,7 @@ function EssayComponent(props) {
   let [title, setTitle] = useState("");
   let [content, setContent] = useState("");
   let _id = sessionStorage.getItem("_id");
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);

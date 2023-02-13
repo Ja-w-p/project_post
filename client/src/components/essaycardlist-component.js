@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function EssaycardlistComponent(props) {
   let { postData } = props;
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   let [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 8;
   const indexOfLastPost = currentPage * postsPerPage;

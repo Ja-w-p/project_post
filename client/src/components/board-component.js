@@ -10,7 +10,7 @@ const BoardComponent = (props) => {
   let { currentUser, boardName } = props;
   let [postData, setPostData] = useState("");
   let [loading, setLoading] = useState(null);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleToPostEssay = () => {
     sessionStorage.setItem("boardName", boardName);
